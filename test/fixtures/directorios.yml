@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  usuario: 1
+  nombre: MyString
+  descripcion: MyString
+  telefono: 1
+  codigo_area: 1
+  celular: 1
+  direccion: MyString
+  comuna: MyString
+  ciudad: MyString
+  region: MyString
+  categoria: MyString
+  subcategoria: MyString
+  estado: MyString
+
+two:
+  usuario: 1
+  nombre: MyString
+  descripcion: MyString
+  telefono: 1
+  codigo_area: 1
+  celular: 1
+  direccion: MyString
+  comuna: MyString
+  ciudad: MyString
+  region: MyString
+  categoria: MyString
+  subcategoria: MyString
+  estado: MyString

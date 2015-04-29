@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Dashboard Beta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- modal vex 
+    <script src="js/vex.combined.min.js"></script>
+    <link rel="stylesheet" href="css/vex.css" />
+    <link rel="stylesheet" href="css/vex-theme-flat-attack.css" />
+    -->
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/prefixfree.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h4 class="text-right">Bienvenido Usuario <span class="fa fa-gear"></span></h4>
+    
+      <div class="row">
+        <div class="col-lg-12 col-lg-offset-2 col-md-12 col-sm-12 col-xs-12">
+          <div class="media">
+              <div class="media-left">
+                <a href="#">
+                    <a href="#">
+                      <i class="fa fa-plus fa-3x"></i>
+                  </a>
+                </a>
+              </div>
+              <div class="media-body">
+                <h2 class="media-heading"><%= link_to 'Crear Nuevos Directorios', new_directorio_path %></h2>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="row">
+         <% @directorios.each do |directorio| %>
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs 12">
+          <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img class="media-object img-responsive" src="img/control.png" alt="">
+                </a>
+              </div>
+              <div class="thumb media-body">
+                <h4 class="media-heading"><%= directorio.nombre %></h4>
+                <p class="text-justify"><%= directorio.descripcion %></p>
+              <ul>
+                <li>Dirección: <%= directorio.direccion %></li>
+                <li>Teléfono:(0<%= directorio.codigo_area %>) <%= directorio.telefono %></li>
+                <li>Correo:</li>
+                <li>Celular:<%= directorio.celular %></li>
+              </ul>
+              <div class="social">
+                <span class="social-icon fa fa-facebook fa-2x"></span>
+                <span class="social-icon fa fa-twitter fa-2x"></span>
+                <span class="social-icon fa fa-pinterest fa-2x"></span>
+                <span class="social-icon fa fa-envelope-o fa-2x"></span>
+              </div>
+
+                <div class="control text-center">
+                  <a>
+                      <%= link_to 'Editar', edit_directorio_path(directorio) %>
+                  </a>
+                  <a>|</a>
+                  <a>
+                      <%= link_to 'Eliminar', directorio, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    </a>
+                  </div>
+              </div>
+
+          </div>
+        </div>
+        <% end %>
+      </div>      
+    </div>
+    <footer>
+      <h2 class="text-center">Footer 2015</h2>
+    </footer>
+  </body>
+</html>
